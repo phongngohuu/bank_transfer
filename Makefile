@@ -8,4 +8,6 @@ migrateup:
 	migrate -path db/migration -database "postgresql://root:123456@localhost:7432/transfer_bank?sslmode=disable" -verbose up
 migratedown:
 	migrate -path db/migration -database "postgresql://root:123456@localhost:7432/transfer_bank?sslmode=disable" -verbose down
-.PHONY: createdb
+sqlc:
+	docker run --rm -v "${CURDIR}:/src" -w /src kjconroy/sqlc generate
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc
