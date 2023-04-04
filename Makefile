@@ -14,7 +14,7 @@ test:
 	go test -v -cover ./...
 server:
 	go run main.go
-mockgen:
+mock:
 	docker run -v $(CURDIR):/app -w /app ekofr/gomock:go-1.13 \
 	mockgen -package mockdb -destination db/mock/store.go github.com/phongngohuu/bank_transfer/db/sqlc Store
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mockgen
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock
