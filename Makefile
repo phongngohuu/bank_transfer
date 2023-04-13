@@ -1,17 +1,17 @@
 postgres:
-	docker run --name postgres12 --network bank-network -p 7432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=123456 -d postgres:12-alpine
+	docker run --name postgres12 --network bank-network -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=123456 -d postgres:12-alpine
 createdb:
 	docker exec -it postgres12 createdb --username=root --owner=root transfer_bank
 dropdb:
 	docker exec -it postgres12 dropdb transfer_bank
 migrateup:
-	migrate -path db/migration -database "postgresql://root:123456@localhost:7432/transfer_bank?sslmode=disable" -verbose up
+	migrate -path db/migration -database "postgresql://root:123456@localhost:5432/transfer_bank?sslmode=disable" -verbose up
 migrateup1:
-	migrate -path db/migration -database "postgresql://root:123456@localhost:7432/transfer_bank?sslmode=disable" -verbose up 1
+	migrate -path db/migration -database "postgresql://root:123456@localhost:5432/transfer_bank?sslmode=disable" -verbose up 1
 migratedown:
-	migrate -path db/migration -database "postgresql://root:123456@localhost:7432/transfer_bank?sslmode=disable" -verbose down
+	migrate -path db/migration -database "postgresql://root:123456@localhost:5432/transfer_bank?sslmode=disable" -verbose down
 migratedown1:
-	migrate -path db/migration -database "postgresql://root:123456@localhost:7432/transfer_bank?sslmode=disable" -verbose down 1
+	migrate -path db/migration -database "postgresql://root:123456@localhost:5432/transfer_bank?sslmode=disable" -verbose down 1
 sqlc:
 	docker run --rm -v "${CURDIR}:/src" -w /src kjconroy/sqlc generate
 test:
