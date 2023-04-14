@@ -43,3 +43,4 @@ mock:
 #aws secretsmanager get-secret-value --secret-id transfer_bank --query SecretString --output text | jq "to_entries|map(\"\(.key)=\(.value)\")|.[]"
 #remove double quote
 #aws secretsmanager get-secret-value --secret-id transfer_bank --query SecretString --output text | jq -r "to_entries|map(\"\(.key)=\(.value)\")|.[]"
+#up
