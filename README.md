@@ -15,4 +15,5 @@ a simple golang application using golang, postgresql, docker, kubernetes
 # kubectl get service
 # install k9s https://k9scli.io/
 
-# bank_transfer\eks>kubectl apply -f deployment.yaml
+# cd eks > kubectl apply -f deployment.yaml
+# cd eks > kubectl apply -f service.yaml
