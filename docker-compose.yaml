@@ -14,7 +14,7 @@ services:
     ports:
       - "8080:8080"
     environment: 
-      - DB_SOURCE=postgresql://root:12345678@postgres:5432/transfer_bank?sslmode=disable
+      - DB_SOURCE=postgresql://root:12345678@transfer-bank.ca8is6ljjqfm.ap-southeast-1.rds.amazonaws.com:5432/transfer_bank?sslmode=disable
     depends_on:
       - postgres
     entrypoint: [ "/app/wait-for.sh", "postgres:5432", "--", "/app/start.sh"]
