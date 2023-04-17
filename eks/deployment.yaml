@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transfer-bank-api-deployment
+  labels:
+    app: transfer-bank-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: transfer-bank-api
+  template:
+    metadata:
+      labels:
+        app: transfer-bank-api
+    spec:
+      containers:
+      - name: transfer-bank-api
+        image: 502320843173.dkr.ecr.ap-southeast-1.amazonaws.com/banktransfer:efe540f87302a83434e61537b932815a3df6879c
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
