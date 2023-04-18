@@ -10,7 +10,7 @@ kind: Ingress
 metadata:
   name: transfer-bank-ingress
   annotations:
-    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   ingressClassName: nginx
   rules:
@@ -24,3 +24,6 @@ spec:
             name: transfer-bank-api-service
             port:
               number: 80
+tls:
+- hosts:
+-
