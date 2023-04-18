@@ -1,7 +1,7 @@
 # DB_URL=postgresql://root:wFnvZVrFcpzGO0B5fuwo@transfer-bank.ca8is6ljjqfm.ap-southeast-1.rds.amazonaws.com:5432/transfer_bank?sslmode=disable
 DB_USER=root
-DB_PASSWORD=nZNnn41RuhrDEZcjO01X
-DB_HOST=transfer-bank.ca8is6ljjqfm.ap-southeast-1.rds.amazonaws.com
+DB_PASSWORD=123456
+DB_HOST=localhost
 DB_URL=postgresql://$(DB_USER):$(DB_PASSWORD)@$(DB_HOST):5432/transfer_bank?sslmode=disable
 
 postgres:
