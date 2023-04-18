@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: transfer-bank-api
-        image: 502320843173.dkr.ecr.ap-southeast-1.amazonaws.com/banktransfer:5a6fb7bac1a1bb0224f403a61885381cb7a5b7c6
+        image: 502320843173.dkr.ecr.ap-southeast-1.amazonaws.com/banktransfer:ce552342b29e2f32769b0dd1fc44d69b1d044471
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
