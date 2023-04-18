@@ -1,7 +1,11 @@
-DB_URL=postgresql://root:wFnvZVrFcpzGO0B5fuwo@transfer-bank.ca8is6ljjqfm.ap-southeast-1.rds.amazonaws.com:5432/transfer_bank?sslmode=disable
+# DB_URL=postgresql://root:wFnvZVrFcpzGO0B5fuwo@transfer-bank.ca8is6ljjqfm.ap-southeast-1.rds.amazonaws.com:5432/transfer_bank?sslmode=disable
+DB_USER=root
+DB_PASSWORD=123456
+DB_HOST=localhost
+DB_URL=postgresql://$(DB_USER):$(DB_PASSWORD)@$(DB_HOST):5432/transfer_bank?sslmode=disable
 
 postgres:
-	docker run --name postgres12 --network bank-network -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=wFnvZVrFcpzGO0B5fuwo -d postgres:12-alpine
+	docker run --name postgres12 --network bank-network -p 5432:5432 -e POSTGRES_USER=$(DB_USER) -e POSTGRES_PASSWORD=$(DB_PASSWORD) -d postgres:12-alpine
 createdb:
 	docker exec -it postgres12 createdb --username=root --owner=root transfer_bank
 dropdb:

@@ -9,7 +9,7 @@
 # run [docker network inspect bank-network] to connect go to db
 # run [docker container ls] list all container running
 # run [docker rm --force bank_transfer] force delete container
-# run [docker run --name bank_transfer --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:wFnvZVrFcpzGO0B5fuwo@postgres12:5432/transfer_bank?sslmode=disable" bank_transfer:latest] to run golang image
+# run [docker run --name bank_transfer --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:123456@postgres12:5432/transfer_bank?sslmode=disable" bank_transfer:latest] to run golang image
 
 FROM golang:1.19-alpine3.17 AS builder
 WORKDIR /app
@@ -27,6 +27,7 @@ COPY app.env .
 COPY start.sh .
 COPY wait-for.sh .
 COPY db/migration ./migration
+
 RUN chmod +x start.sh
 
 EXPOSE 8080
