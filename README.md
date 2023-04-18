@@ -21,3 +21,10 @@ a simple golang application using golang, postgresql, docker, kubernetes
 # pwddb wFnvZVrFcpzGO0B5fuwo
 
 # docker pull [image] 
+
+# ingress https://kubernetes.io/docs/concepts/services-networking/ingress/
+#  kubectl apply -f eks/ingress.yaml
+
+# ingress controller https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/ 
+# ingress  controller nginx  https://github.com/kubernetes/ingress-nginx/blob/main/README.md#readme
+# kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.7.0/deploy/static/provider/aws/deploy.yaml
