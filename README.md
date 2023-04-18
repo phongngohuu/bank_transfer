@@ -17,4 +17,5 @@ a simple golang application using golang, postgresql, docker, kubernetes
 
 # cd eks > kubectl apply -f deployment.yaml
 # cd eks > kubectl apply -f service.yaml
+# nslookup [ip]
 #pwddb wFnvZVrFcpzGO0B5fuwo
