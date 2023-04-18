@@ -5,7 +5,7 @@ services:
     image: postgres:12-alpine
     environment:
       - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=wFnvZVrFcpzGO0B5fuwo
+      - POSTGRES_PASSWORD=nZNnn41RuhrDEZcjO01X
       - POSTGRES_DB=transfer_bank
   api:
     build:
@@ -14,7 +14,7 @@ services:
     ports:
       - "8080:8080"
     environment: 
-      - DB_SOURCE=postgresql://root:wFnvZVrFcpzGO0B5fuwo@transfer-bank.ca8is6ljjqfm.ap-southeast-1.rds.amazonaws.com:5432/transfer_bank
+      - DB_SOURCE=postgresql://root:nZNnn41RuhrDEZcjO01X@transfer-bank.ca8is6ljjqfm.ap-southeast-1.rds.amazonaws.com:5432/transfer_bank
     depends_on:
       - postgres
     entrypoint: [ "/app/wait-for.sh", "postgres:5432", "--", "/app/start.sh"]
