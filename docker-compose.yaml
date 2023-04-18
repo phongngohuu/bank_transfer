@@ -5,7 +5,7 @@ services:
     image: postgres:12-alpine
     environment:
       - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=wFnvZVrFcpzGO0B5fuwo
+      - POSTGRES_PASSWORD=123456
       - POSTGRES_DB=transfer_bank
   api:
     build:
