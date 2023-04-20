@@ -26,4 +26,5 @@ spec:
               number: 80
 tls:
 - hosts:
--
+  - abca98009e7794b72b87f8c1556aef8e-291616257.ap-southeast-1.elb.amazonaws.com
+  secretName: transfer-bank-api-cert
